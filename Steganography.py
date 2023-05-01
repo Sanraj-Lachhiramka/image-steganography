@@ -1,34 +1,3 @@
-#Steganography-data is hidden in plain sight
-#Steganography is the art and science of embedding secret messages in cover message in such a way that no one, apart from sender and intended recipient, suspects the existamce of the mssg
-#Steganography-Steganos(concealed or hidden)+graphen(drawing/writing)
-#cover media-means by which u are hiding image
-#steganography types:text,image,audio,video,network,email
-
-#Charcteristics of Steganographic techniques:transparency(there must be no distortion in image after we hide the mssg),robustness(the image does not loose info even if the media undergoes some damage like cropping,filtering),tamper resistance(the ability of a device to defend against a threat that has the objective to compromise the device and or the data processed by the device)
-
-"""
-Basic Steganographic model:
-
-cover file(X), secret message(M),Key(K)-->steganographic encoder{f(X,M,K)}-->(Stego object)-->communication channel-->(Stego object)-->Steganographic Decoder(stego object,Key)-->Secet message(M)
-Key is optional-its for extra security
-Stego object just look likes the cover file
-"""
-
-"""
-Steganographic model:with encryption
-
-more safe
-message,Key-->encrytping algorithm-->(cypher text)-->cyphertext,stegokey,cover file-->steganographic encoder-->(stego object)-->communication channel-->(stego object)-->stgokey,stego object-->steganographic decoder-->cypher text-->cyphertext,key-->decrypting algo-->mssg
-"""
-
-#LSB steganography-least significant bit steganography
-#if we change most significant bit, it will have a larger imapct on final value. If we change LSB, the impact on final value is very less.
-"""
-Value:255=1111 1111
-Value after changing msb:0111 1111=127 so change in bytes is 99.9999%
-value after changing lsb:1111 1110=254 so change in bytes is 0.000002%
-"""
-#lsb steganography involves overwriting the bit with the lowest arithmetic value
 
 """
 Steps to encode the text into image:
@@ -39,10 +8,6 @@ Steps to encode the text into image:
 Steps to decode the text from image:
 4-while retriving all the 0's and 1's extracted until delimiter is found. Extracted bits are converted into string(secret mssg)
 """
-
-# Python program implementing Image Steganography
-
-
 
 # PIL module is used to extract pixels of image and modify it
 
